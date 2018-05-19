@@ -3,12 +3,14 @@ import TotalCostReducer from './totalCostReducer';
 import BasketReducer from './basketReducer';
 import DiscountReducer from './discountReducer';
 import DeliveryReducer  from './deliveryReducer';
+import CheckoutReducer from './checkoutReducer';
 
 const rootReducer = combineReducers({
   totalCost: TotalCostReducer,
   basket: BasketReducer,
   discount: DiscountReducer,
-  delivery: DeliveryReducer
+  delivery: DeliveryReducer,
+  checkout: CheckoutReducer
 });
 
 export default rootReducer;
