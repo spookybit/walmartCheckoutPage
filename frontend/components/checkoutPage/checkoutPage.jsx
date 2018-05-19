@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../header/header';
+import CheckoutForm from '../forms/checkoutForm';
 
 class CheckoutPage extends React.Component {
   constructor() {
@@ -10,7 +11,7 @@ class CheckoutPage extends React.Component {
     return (
       <div>
         <Header />
-        <div>naniii</div>
+        <CheckoutForm />
       </div>
     )
   }
