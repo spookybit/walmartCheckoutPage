@@ -8,8 +8,8 @@ class CheckoutForm extends React.Component {
     super();
 
     this.state = {
-      child1: {active: false, complete: true, address: '742 Evergreen Terrace, Springfield, OR 00000'},
-      child2: {active: false, complete: true, shipping: false},
+      child1: {active: true, complete: true, address: '742 Evergreen Terrace, Springfield, OR 00000'},
+      child2: {active: true, complete: true, shipping: false},
       child3: {active: true, complete: false},
     }
   }
