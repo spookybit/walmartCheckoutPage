@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/entry.jsx",
+  entry: "./frontend/entry.js",
   output: {
     path: path.resolve(__dirname, 'bundle'),
     filename: "bundle.js"
@@ -23,4 +23,5 @@ module.exports = {
     extensions: [".js", ".jsx", "*" ]
   },
   devtool: 'source-map',
+  mode: 'production'
 };
