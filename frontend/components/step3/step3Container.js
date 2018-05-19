@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Step2 from './step2';
+import Step3 from './step3';
 
 const mapStateToProps = () => ({
 });
@@ -8,4 +8,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect (null, null)(Step2);
+export default connect (null, null)(Step3);

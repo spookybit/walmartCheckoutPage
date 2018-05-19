@@ -74,9 +74,15 @@ class Step1 extends React.Component {
       }
     } else if (!this.state.active) {
       if (this.state.complete) {
+        let deliveryType = this.state.deliveryType;
+        let address = this.state.address;
         return <FormComplete formNumber='1' formHeading='Shipping' formDetails={
-            {img: chair,
-            arrival: 'Dec 25, 2018'}
+            {
+              img: chair,
+              arrival: 'Dec 25, 2018',
+              delivery: deliveryType,
+              address: address
+            }
           }/>
       } else {
         return <FormIncomplete formNumber='1' formHeading='Shipping and pickup options' />

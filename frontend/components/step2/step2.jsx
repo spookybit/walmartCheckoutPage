@@ -40,10 +40,24 @@ class Step2 extends React.Component {
       }
     } else if (!this.state.active) {
       if (this.state.complete) {
-        return <FormComplete formNumber='2' formHeading='Shipping' formDetails={
-            {img: chair,
-            arrival: 'Dec 25, 2018'}
-          }/>
+        if (this.state.shipping) {
+          let address = this.state.address
+          return <FormComplete formNumber='2' formHeading='Send to' formDetails={
+              {
+                name: 'Bart Simpson',
+                address: address
+              }
+            }/>
+        } else {
+          let address = this.state.address
+          return <FormComplete formNumber='2' formHeading='Send to' formDetails={
+              {
+                name: 'Bart Simpson',
+                email: 'bartMan@springfieldElementary.edu',
+                address: address
+              }
+            }/>
+        }
       } else {
         return <FormIncomplete formNumber='2' formHeading='Enter shipping address' />
       }

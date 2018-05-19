@@ -9,12 +9,23 @@ class FormComplete extends React.Component {
     const {formDetails} = this.props;
 
     if (this.props.formNumber === '1') {
-      return (
-        <div>
-          <img src={formDetails.img} />
-          <div>{formDetails.arrival}</div>
-        </div>
-      )
+      if (formDetails.deliveryType === 'shipping'){
+        return (
+          <div>
+            <div>Shipping</div>
+            <img src={formDetails.img} />
+            <div>{formDetails.arrival}</div>
+          </div>
+        )
+      } else if (formDetails.deliveryType === 'pickup') {
+        return (
+          <div>
+            <div>{formDetails.address}</div>
+            <img src={formDetails.img} />
+            <div>Available {formDetails.arrival}</div>
+          </div>
+        )
+      }
     } else {
       return (
         <div>
