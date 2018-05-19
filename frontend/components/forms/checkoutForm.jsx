@@ -8,7 +8,7 @@ class CheckoutForm extends React.Component {
     super();
 
     this.state = {
-      child1: {active: true, complete: false},
+      child1: {active: false, complete: true},
       child2: {active: false, complete: false},
       child3: {active: false, complete: false},
     }

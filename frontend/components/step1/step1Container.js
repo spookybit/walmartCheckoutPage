@@ -10,4 +10,4 @@ const mapDispatchToProps = (dispatch) => ({
   setShipping: (deliveryType) => dispatch(setShipping(deliveryType))
 });
 
-export default connect (null, null)(Step1);
+export default connect (null, mapDispatchToProps)(Step1);

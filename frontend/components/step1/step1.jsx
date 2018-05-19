@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.png';
 import chair from './chair.jpeg';
+import FormIncomplete from '../forms/formIncomplete';
+import FormComplete from '../forms/formComplete';
 
 class Step1 extends React.Component {
   constructor(props) {
@@ -35,11 +37,6 @@ class Step1 extends React.Component {
     }
   }
 
-  submitForm() {
-    // this.props.setShipping(this.state.deliveryType);
-    // this.props.submitForm();
-  }
-
   optionSelect() {
     if (this.state.active) {
       if (this.state.deliveryType === 'shipping') {
@@ -58,7 +55,14 @@ class Step1 extends React.Component {
 
       }
     } else if (!this.state.active) {
-      return <div>inactive</div>;
+      if (this.state.complete) {
+        return <FormComplete formNumber='1' formHeading='Shipping' formDetails={
+            {img: chair,
+            arrival: 'Dec 25, 2018'}
+          }/>
+      } else {
+        return <FormIncomplete formNumber='1' formHeading='Shipping and pickup options' />
+      }
     }
   }
 
