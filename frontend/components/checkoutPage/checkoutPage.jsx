@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../header/header';
 
 class CheckoutPage extends React.Component {
   constructor() {
@@ -7,7 +8,10 @@ class CheckoutPage extends React.Component {
 
   render () {
     return (
-      <div>naniii</div>
+      <div>
+        <Header />
+        <div>naniii</div>
+      </div>
     )
   }
 }
