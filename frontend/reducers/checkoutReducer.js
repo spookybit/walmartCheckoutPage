@@ -1,4 +1,5 @@
 import {merge} from 'lodash';
+import SET_SHIPPING_SLICE from '../components/step1/step1Actions';
 
 const defaultCheckoutInfo = {
   delivery: {
@@ -41,6 +42,9 @@ const defaultCheckoutInfo = {
 const CheckoutReducer = (state = defaultCheckoutInfo, action) => {
   Object.freeze(state);
   switch(action.type){
+    case SET_SHIPPING_SLICE:
+      const deliveryType = actions.deliveryType;
+      return merge({}, state, deliveryType)
     default:
       return state;
   }

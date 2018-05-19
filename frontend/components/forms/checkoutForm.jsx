@@ -8,26 +8,39 @@ class CheckoutForm extends React.Component {
     super();
 
     this.state = {
-      child1: 'active',
-      child2: 'active',
-      child3: 'active',
+      child1: {active: true, complete: false},
+      child2: {active: false, complete: false},
+      child3: {active: false, complete: false},
     }
   }
 
-  inactivateAllForms () {
-    this.setState(
-      {
-        child1: 'incomplete',
-        child2: 'incomplete',
-        child3: 'incomplete',
+  submitForm(e) {
+    let form = e.target.id;
+
+    if (form === 'form1Submit') {
+      if (!this.state.child2.complete) {
+        this.setState = {
+          child1 : {active: false, complete: true},
+          child2 : {active: true, complete: false}
+        }
+      } else if (this.state.child2.complete) {
+        this.setState = {
+          child1 : {active: false, complete: true},
+          child3 : {active: true, complete: false}
+        }
       }
-    )
+    } else if (form === 'form2Submit') {
+      this.setState = {
+        child2 : {active: false, complete: true},
+        child3 : {active: true, complete: false}
+      }
+    }
   }
 
   render () {
     return (
       <div>
-        <Step1Container inactivateAllForms={this.inactivateAllForms.bind(this)} status={this.state.child1}/>
+        <Step1Container submitForm={this.submitForm.bind(this)}status={this.state.child1}/>
       </div>
     )
   }
