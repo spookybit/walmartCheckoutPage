@@ -55,8 +55,8 @@ class CheckoutForm extends React.Component {
     return (
       <div>
         <Step1Container shippingUpdate={this.shippingUpdate.bind(this)} submitForm={this.submitForm.bind(this)} status={this.state.child1}/>
-        <Step2Container submitForm={this.submitForm.bind(this)}status={this.state.child2} address={this.state.child1.address}/>
-        <Step3Container />
+        <Step2Container submitForm={this.submitForm.bind(this)} status={this.state.child2} address={this.state.child1.address}/>
+        <Step3Container submitForm={this.submitForm.bind(this)} status={this.state.child3}/>
       </div>
     )
   }
